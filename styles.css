@@ -1,0 +1,145 @@
+:root {
+  color-scheme: light;
+  font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+  line-height: 1.6;
+  --text: #1c1b22;
+  --muted: #5b5a66;
+  --primary: #1c5d99;
+  --accent: #f7b267;
+  --background: #f7f7fb;
+  --card: #ffffff;
+  --shadow: 0 18px 40px rgba(26, 33, 66, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--background);
+  color: var(--text);
+}
+
+.hero {
+  background: linear-gradient(120deg, #1c5d99 0%, #3c91e6 50%, #63b3ed 100%);
+  color: #ffffff;
+  padding: 64px 20px 72px;
+}
+
+.hero__content {
+  max-width: 860px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.75rem;
+  font-weight: 700;
+  opacity: 0.85;
+  margin-bottom: 12px;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  margin-bottom: 16px;
+}
+
+.hero p {
+  max-width: 650px;
+  font-size: 1.05rem;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 48px 20px 72px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.intro h2,
+.comparison h2 {
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+}
+
+.intro p {
+  color: var(--muted);
+  max-width: 720px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  background: var(--card);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.card h3 {
+  font-size: 1.25rem;
+}
+
+.card__tag {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.card p {
+  color: var(--muted);
+}
+
+.comparison__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: var(--shadow);
+}
+
+.comparison__grid h4 {
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.comparison__grid p {
+  color: var(--muted);
+}
+
+.footer {
+  background: #1c1b22;
+  color: #f9f8ff;
+  text-align: center;
+  padding: 32px 20px;
+}
+
+.footer p {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+@media (max-width: 720px) {
+  .hero {
+    padding: 48px 20px 56px;
+  }
+
+  .comparison__grid {
+    padding: 20px;
+  }
+}
