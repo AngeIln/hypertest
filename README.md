@@ -18,6 +18,8 @@ python3 -m http.server 8080
 
 Puis ouvrez <http://localhost:8080>.
 
+Lien direct (une fois le serveur lancé) : [http://localhost:8080](http://localhost:8080)
+
 ## Structure
 
 - `index.html` : contenu principal.
