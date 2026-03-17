@@ -1,27 +1,48 @@
-# Banane Air
+# AI Code Studio – MVP Monorepo
 
-Site vitrine ultra stylé qui présente une banane premium dans un univers inspiré des pages produit d’Apple.
+Plateforme web pour générer, corriger, expliquer et exécuter du code avec IA.
 
-## Lancer le site
+## Vision
 
-Aucune dépendance nécessaire. Choisissez l’une des options :
+Ce dépôt implémente une base **MVP** alignée avec le cahier des charges:
 
-### 1) Ouvrir directement le fichier
+- Génération/explication de snippets (Python, JavaScript, Java, C#, SQL).
+- Éditeur web + exécution sandboxée (Python/JS) avec limites.
+- Historique de sessions et versioning simple.
+- Authentification utilisateur (JWT + OAuth prêt à intégrer).
+- Déclenchement de tests unitaires depuis l'interface (endpoint backend + worker stub).
 
-Double-cliquez sur `index.html` pour l’ouvrir dans votre navigateur.
+## Architecture
 
-### 2) Servir en local (recommandé)
+- `frontend/`: Next.js (App Router), TypeScript, Tailwind-ready.
+- `backend/`: FastAPI + SQLAlchemy + JWT.
+- `infra/`: `docker-compose.yml` (PostgreSQL, Redis, backend, frontend).
+- `docs/`: produit, roadmap et architecture technique.
+
+## Lancer en local
 
 ```bash
-python3 -m http.server 8080
+cp backend/.env.example backend/.env
+cp frontend/.env.example frontend/.env.local
+docker compose -f infra/docker-compose.yml up --build
 ```
 
-Puis ouvrez <http://localhost:8080>.
+- Frontend: <http://localhost:3000>
+- Backend API docs: <http://localhost:8000/docs>
 
-Lien direct (une fois le serveur lancé) : [http://localhost:8080](http://localhost:8080)
+## Endpoints principaux
 
-## Structure
+- `POST /api/v1/auth/register`
+- `POST /api/v1/auth/login`
+- `POST /api/v1/ai/generate`
+- `POST /api/v1/ai/explain`
+- `POST /api/v1/execution/run`
+- `GET /api/v1/sessions`
+- `POST /api/v1/tests/run`
 
-- `index.html` : contenu principal.
-- `styles.css` : styles, effets glassmorphism, typographie.
-- `script.js` : micro-interaction sur la banane.
+## Remarques
+
+Cette version pose une base de production-friendly, mais garde certaines briques en mode stub:
+- appels LLM (service mocké) ;
+- sandbox runtime (limites simulées + interface extensible) ;
+- collaboration temps réel (prévue v2).

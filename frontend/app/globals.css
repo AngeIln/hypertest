@@ -1,0 +1,43 @@
+body {
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+  background: #0b1020;
+  color: #f8fafc;
+}
+
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 16px;
+}
+
+.card {
+  background: #121a31;
+  border: 1px solid #29324d;
+  border-radius: 12px;
+  padding: 16px;
+  display: grid;
+  gap: 10px;
+}
+
+textarea,
+select,
+button {
+  border-radius: 8px;
+  border: 1px solid #374151;
+  padding: 10px;
+  background: #0f172a;
+  color: #f8fafc;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+pre {
+  background: #0f172a;
+  padding: 10px;
+  border-radius: 8px;
+  overflow: auto;
+}
